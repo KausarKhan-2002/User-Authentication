@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User SignUp - SignIn</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-100">
+    <!-- ====================== Header ============================= -->
+    <header
+      class="bg-slate-100 px-20 py-4 fixed w-full top-0 left-0 z-[999] flex justify-between items-center shadow-md"
+    >
+      <div id="logo" class="text-lg font-bold">
+        User<span class="text-red-600">Authentication</span>
+      </div>
+
+      <nav class="flex gap-10 font-medium items-center">
+        <li class="list-none cursor-pointer">Dashboard</li>
+        <!-- <li class="list-none cursor-pointer">My routine</li> -->
+        <li
+          class="list-none cursor-pointer flex gap-5 bg-slate-200 rounded-full px-4 py-2"
+        >
+          <button class="bg-slate-100 rounded-full py-[1px] w-[50px]">
+            <i
+              class="fa fa-sun-o text-xl w-full h-full hover:rotate-[360deg] transition duration-[1s]"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <button class="rounded-full py-[1px] w-[50px]">
+            <i
+              class="fa fa-moon-o text-xl w-full h-full hover:rotate-[360deg] transition duration-[1s]"
+              aria-hidden="true"
+            ></i>
+          </button>
+        </li>
+
+        <li class="list-none cursor-pointer">
+          <button class="bg-slate-800 text-white px-3 py-1 rounded-md">
+            Sign up
+          </button>
+          <button
+            style="display: none"
+            class="bg-slate-800 text-white px-3 py-1 rounded-md"
+          >
+            Log in
+          </button>
+        </li>
+        <li class="list-none cursor-pointer">
+          <img
+            src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg"
+            alt="Profile"
+            class="w-12 h-12 rounded-full border-2 border-slate-800"
+            title="Customize your profile"
+          />
+        </li>
+      </nav>
+    </header>
+
+    <main id="root">
+      <!-- ====================== Form ============================= -->
+      <section id="form" class="border-2 min-h-[100vh] flex justify-center items-center">
+        <!-- ========= Sign up page ========== -->
+        <div style="display: block;" class="flex justify-center items-center bg-gray-100">
+          <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <!-- Header Section -->
+            <div class="text-center mb-6">
+              <h2 class="text-2xl font-bold text-gray-800">Sign Up</h2>
+              <p class="text-sm text-gray-500 font-medium">
+                Let's get started with 30 days demo trial
+              </p>
+            </div>
+            <!-- Form Section -->
+            <form>
+              <!-- Name Input -->
+              <div class="mb-4">
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
+                />
+              </div>
+              <!-- Email Input -->
+              <div class="mb-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
+                />
+              </div>
+              <!-- Password Input -->
+              <div class="mb-6">
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
+                />
+              </div>
+              <!-- Sign Up Button -->
+              <button
+                type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg"
+              >
+                Sign Up
+              </button>
+            </form>
+            <!-- Already Have an Account Section -->
+            <p class="text-center text-sm mt-4 text-gray-600 font-medium">
+              Already have an account?
+              <a href="#" class="text-blue-500 font-medium hover:underline"
+                >Log in</a
+              >
+            </p>
+            <!-- Terms of Use Section -->
+            <p class="text-center mt-4 text-xs text-gray-500 font-medium">
+              By signing up to create an account, I accept Company's
+              <a href="#" class="text-blue-500 hover:underline">Terms of Use</a>
+              and
+              <a href="#" class="text-blue-500 hover:underline"
+                >Privacy Policy</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <!-- ========= Sigin in page ========== -->
+        <div
+          id="signIn"
+          style="display: none;"
+          class="bg-gray-100"
+        >
+          <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">
+              Log in
+            </h2>
+            <form>
+              <!-- Email Input -->
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-600 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="johndoe@gmail.com"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <!-- Password Input -->
+              <div class="mb-6">
+                <label
+                  for="password"
+                  class="block text-sm font-medium text-gray-600 mb-2"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <!-- Login Button -->
+              <button
+                type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg"
+              >
+                Log in
+              </button>
+              <!-- Or Sign Up -->
+              <div class="text-center text-sm text-gray-500 mt-4">
+                or,
+                <a href="#" class="text-blue-500 font-medium hover:underline"
+                  >sign up</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- <button id="isLogin" class="bg-green-400 px-3 py-1">Log in</button> -->
+
+    <script src="./app.js"></script>
+  </body>
+</html>
