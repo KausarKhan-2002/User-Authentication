@@ -7,7 +7,10 @@ function theme(themeBtns) {
 }
 
 function themeChangerLocally(themeBtns) {
-    console.log(themeBtns);
+
+    if (localStorage.getItem("isDark") === null) {
+        localStorage.setItem("isDark", "false")
+    }
     
     if (localStorage.getItem("isDark") == "true") {
         themeChanger(themeBtns[1])

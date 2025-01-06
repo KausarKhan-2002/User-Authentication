@@ -16,6 +16,8 @@ import theme from "./scripts/theme.js";
 // eachId.forEach(id => elementsId[id.id] = id)
 // console.log(elementsId);
 
+header.style.display = "none"
+
 
 loginAcount.addEventListener("click", () => {
   sigInPage.style.display = "none";
@@ -55,6 +57,7 @@ function handleUserSignUp() {
     
     sigInPage.style.display = "none"
     logInPage.style.display = "flex"
+    header.style.display = "flex"
 
     return;
   }

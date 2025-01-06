@@ -1,5 +1,3 @@
-
-
 function usersignupAuthentication(e) {
   e.preventDefault();
 
@@ -75,12 +73,14 @@ function usersignupAuthentication(e) {
   localStorage.setItem("isLoggedin", true);
   sigInPage.style.display = "none";
   logInPage.style.display = "block"
+  header.style.display = "flex"
 
   signupName.value = ""
   signupEmail.value = ""
   signupPassword.value = ""
   signupTelephone.value = ""
   signupDate.value = ""
+
 }
 
 export default usersignupAuthentication;
