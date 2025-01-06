@@ -8,13 +8,14 @@ import {
   signupTelephoneTextValidationColor,
   signupDOBTextValidationColor,
 } from "./scripts/userSignupTextColor.js";
+import theme from "./scripts/theme.js";
 
+// Just try access every Id's of HTML in elementsId
 // const elementsId = {};
 // const eachId = document.querySelectorAll("[id]")
 // eachId.forEach(id => elementsId[id.id] = id)
 // console.log(elementsId);
 
-header.style.display = "none";
 
 loginAcount.addEventListener("click", () => {
   sigInPage.style.display = "none";
@@ -28,7 +29,6 @@ signUpAcount.addEventListener("click", () => {
 
 function handleUserSignUp() {
   if (localStorage.getItem("isLoggedin") === "true") {
-    console.log("yes");
     
     signupUsernameTextValidationColor(signupName);
     signupEmailTextValidationColor(signupEmail);
@@ -49,23 +49,12 @@ function handleUserSignUp() {
       signupDate.value = "";
     });
 
-    let trackLogin = localStorage.getItem("isloggedInPage")
-
     loginSubmit.addEventListener("click", (e) => {
-      trackLogin = userLogin(e)
-
+      userLogin(e)
     })
     
     sigInPage.style.display = "none"
     logInPage.style.display = "flex"
-
-    // if (trackLogin == "false") {
-    //   logInPage.style.display = "none"
-    //   header.style.display = "flex"
-    // }
-    // else {
-    //   logInPage.style.display = "block"
-    // }
 
     return;
   }
@@ -82,3 +71,6 @@ function handleUserSignUp() {
 
 // localStorage.clear();
 handleUserSignUp();
+
+const themeBtns = document.querySelectorAll(".themeMode")
+theme(themeBtns)
