@@ -13,6 +13,7 @@
   <body class="bg-slate-100">
     <!-- ====================== Header ============================= -->
     <header
+      id="header"
       class="bg-slate-100 px-20 py-4 fixed w-full top-0 left-0 z-[999] flex justify-between items-center shadow-md"
     >
       <div id="logo" class="text-lg font-bold">
@@ -61,11 +62,20 @@
       </nav>
     </header>
 
+    <div id="dashboard"></div>
+
     <main id="root">
       <!-- ====================== Form ============================= -->
-      <section id="form" class="border-2 min-h-[100vh] flex justify-center items-center">
+      <section
+        id="form"
+        class="border-2 min-h-[100vh] flex justify-center items-center"
+      >
         <!-- ========= Sign up page ========== -->
-        <div style="display: block;" class="flex justify-center items-center bg-gray-100">
+        <div
+          id="sigInPage"
+          style="display: block"
+          class="flex justify-center items-center bg-gray-100"
+        >
           <div class="bg-white p-8 rounded-lg shadow-lg w-96">
             <!-- Header Section -->
             <div class="text-center mb-6">
@@ -80,28 +90,66 @@
               <div class="mb-4">
                 <input
                   type="text"
+                  id="signupName"
                   placeholder="Enter your name"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
                 />
+                <p class="text-[.7rem] text-slate-400">
+                  Username must be filled
+                </p>
               </div>
               <!-- Email Input -->
               <div class="mb-4">
                 <input
                   type="email"
+                  id="signupEmail"
                   placeholder="Enter your email"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
                 />
+                <p class="text-[.7rem] text-slate-400">
+                  Email must containts @gmail.com and more then 10
+                </p>
               </div>
+
               <!-- Password Input -->
               <div class="mb-6">
                 <input
                   type="password"
-                  placeholder="Enter your password"
+                  id="signupPassword"
+                  placeholder="Create your password"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
                 />
+                <p class="text-[.7rem] text-slate-400">
+                  Password must be more then 8 digits
+                </p>
+              </div>
+              <div class="mb-6">
+                <input
+                  type="text"
+                  id="signupTelephone"
+                  maxlength="10"
+                  placeholder="Enter your Mobile number"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
+                />
+                <p class="text-[.7rem] text-slate-400">
+                  Mobile no must be of 10 digits
+                </p>
+              </div>
+              <div class="mb-6">
+                <input
+                  type="date"
+                  id="signupDate"
+                  placeholder="Enter your Mobile number"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-medium"
+                />
+                <p class="text-[.7rem] text-slate-400">
+                  Your DOB must be filled
+                </p>
               </div>
               <!-- Sign Up Button -->
               <button
+                id="signupSubmit"
+                type
                 type="submit"
                 class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg"
               >
@@ -111,28 +159,28 @@
             <!-- Already Have an Account Section -->
             <p class="text-center text-sm mt-4 text-gray-600 font-medium">
               Already have an account?
-              <a href="#" class="text-blue-500 font-medium hover:underline"
-                >Log in</a
+              <span
+                id="loginAcount"
+                class="cursor-pointer text-blue-500 font-medium hover:underline"
+                >Log in</span
               >
             </p>
             <!-- Terms of Use Section -->
             <p class="text-center mt-4 text-xs text-gray-500 font-medium">
               By signing up to create an account, I accept Company's
-              <a href="#" class="text-blue-500 hover:underline">Terms of Use</a>
+              <span class="cursor-pointer text-blue-500 hover:underline"
+                >Terms of Use</span
+              >
               and
-              <a href="#" class="text-blue-500 hover:underline"
-                >Privacy Policy</a
+              <span class="cursor-pointer text-blue-500 hover:underline"
+                >Privacy Policy</span
               >.
             </p>
           </div>
         </div>
 
-        <!-- ========= Sigin in page ========== -->
-        <div
-          id="signIn"
-          style="display: none;"
-          class="bg-gray-100"
-        >
+        <!-- ========= login in page ========== -->
+        <div id="logInPage" style="display: none" class="bg-gray-100">
           <div class="bg-white p-8 rounded-lg shadow-lg w-96">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">
               Log in
@@ -147,7 +195,7 @@
                 >
                 <input
                   type="email"
-                  id="email"
+                  id="loginEmail"
                   placeholder="johndoe@gmail.com"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -161,13 +209,14 @@
                 >
                 <input
                   type="password"
-                  id="password"
+                  id="loginPassword"
                   placeholder="Password"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <!-- Login Button -->
               <button
+                id="loginSubmit"
                 type="submit"
                 class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg"
               >
@@ -176,8 +225,10 @@
               <!-- Or Sign Up -->
               <div class="text-center text-sm text-gray-500 mt-4">
                 or,
-                <a href="#" class="text-blue-500 font-medium hover:underline"
-                  >sign up</a
+                <span
+                  id="signUpAcount"
+                  class="cursor-pointer text-blue-500 font-medium hover:underline"
+                  >sign up</span
                 >
               </div>
             </form>
@@ -188,6 +239,6 @@
 
     <!-- <button id="isLogin" class="bg-green-400 px-3 py-1">Log in</button> -->
 
-    <script src="./app.js"></script>
+    <script type="module" src="./assets/app.js"></script>
   </body>
 </html>
